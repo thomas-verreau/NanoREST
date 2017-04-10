@@ -1,0 +1,25 @@
+{
+    "nodes": [
+        {
+            "method": "GET",
+            "path": "/comments",
+            "template": "SELECT * FROM comment",
+            "hasResults": true
+        }, {
+            "method": "GET",
+            "path": "/comments/([0-9a-zA-Z]+)",
+            "template": "SELECT * FROM comment WHERE com_id=?",
+            "hasResults": true
+        },{
+            "method": "GET",
+            "path": "/tags",
+            "template": "SELECT * FROM tag ORDER BY code ASC",
+            "hasResults": true
+        }, {
+            "method": "GET",
+            "path": "/tags/findByTagGroup/([0-9a-zA-Z_]+)",
+            "template": "SELECT * FROM tag WHERE tag_group=?",
+            "hasResults": true
+        }
+    ]
+}
